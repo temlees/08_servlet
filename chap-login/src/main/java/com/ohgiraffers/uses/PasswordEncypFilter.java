@@ -13,6 +13,7 @@ public class PasswordEncypFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
+        //HttpServletRequest쓰려고 다운캐스팅한다
         HttpServletRequest hrequest = (HttpServletRequest) servletRequest;
         RequestWrapper wrapper = new RequestWrapper(hrequest);
         filterChain.doFilter(wrapper, servletResponse);
